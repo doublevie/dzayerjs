@@ -1554,6 +1554,7 @@ build : function(target,options) {
     filter : dzayer.wilayas,
     showNumbers : false,
     select : false ,
+    communes : false ,
     render : function(x){
       var name =   x.name ;
 if (options && options.showNumbers) name = x.id +'-'+name;
@@ -1569,8 +1570,28 @@ for (var i = 0; i < param.filter.length; i++) {
   outPut += param.render(param.filter[i]);
 }
 document.querySelector(target).innerHTML = outPut;
-} ,
 
+if (param.communes) {
+  dzayer.buildCommunes(document.querySelector(target).value,param.communes);
+document.querySelector(target).addEventListener('change',function(){
+var t = document.querySelector(target).value;
+
+
+ dzayer.buildCommunes(t,param.communes);
+  });
+}
+
+
+} ,
+ buildCommunes : function(w,sel) {
+  var outp = '';
+for (var i = 0; i < dzayer.communes.length; i++) {
+  if (dzayer.communes[i].wilaya == w) outp +=  '<option value="'+dzayer.communes[i].name+'" >'+dzayer.communes[i].name+'</option>';
+
+}
+
+document.querySelector(sel).innerHTML = outp;
+}
 
 
 

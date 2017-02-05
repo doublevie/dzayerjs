@@ -162,10 +162,20 @@ var results = dzayer.search(val); // rertun Object
 <div class="row">
 <div class="col-md-6">
   <pre> example 4
+    <code class="html">
+      /*HTML*/
+      &lt;select id="example4" class="form-control" name=""&gt&lt;/select&gt
+
+      &lt;select id="communes" class="form-control" name=""&gt&lt;/select&gt
+  </code>
+
+
   <code class="js">
+    /*JavaScript*/
     dzayer.build('#example4',{
       showNumbers :true,
       select : 'tizi', // or 'tizi ouezzo'  or 15
+      communes : '#communes',
     });
 </code>
   </pre>
@@ -178,6 +188,9 @@ var results = dzayer.search(val); // rertun Object
   <select id="example4" class="form-control" name="">
   </select>
 
+<br>
+  <select id="communes" class="form-control" name="">
+  </select>
 </div>
 
 </div>
@@ -224,6 +237,7 @@ dzayer.build('#example3');
 dzayer.build('#example4',{
   showNumbers :true,
   select : 'tizi',
+  communes : '#communes',
 });
 
 

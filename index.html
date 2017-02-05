@@ -53,6 +53,7 @@
 <div class="container">
 <div class="well">
 <h1>DZAYER.JS</h1>
+<p>Javascript library for algeria cities , build , search , count </p>
 
 <div style="text-align:center">
   <a href="https://raw.githubusercontent.com/doublevie/dzayerjs/master/dzayer.js" class="btn btn-success btn-lg">Download</a>
@@ -215,6 +216,53 @@ dzayer.distance(dzayer.wilaya(19) , dzayer.wilaya(25) , 'm'); // 107779.38770951
 </code>
   </pre>
 
+
+<hr>
+
+<h3>Closest & furthest</h3>
+
+
+<div class="row">
+<div class="col-md-6">
+  <h4>Closest</h4>
+
+  <pre>
+  examples
+  <code class="js">
+    // example 1
+  var w1 = dzayer.wilaya(16) ;
+  var w2 = dzayer.closest(w1);
+  console.log(w2.name); //return Blida
+
+    // example 2
+   var w = dzayer.commune('ferdjioua').origin() ;
+  var closest =dzayer.closest(w);
+  console.log(closest.name); //return Constantine
+
+  </code>
+  </pre>
+</div>
+
+<div class="col-md-6">
+  <h4>furthest</h4>
+  <pre>
+  examples
+  <code class="js">
+    // example 1
+  var w1 = dzayer.wilaya(11) ; // tamanrasset
+  var w2 = dzayer.furthest(w1);
+  console.log(w2.name); //return Annaba
+
+    // example 2
+   var w = dzayer.commune('adrar').origin() ;
+  var furthest =dzayer.furthest(w);
+  console.log(furthest.name); //return El Taref
+
+  </code>
+  </pre>
+
+</div>
+</div>
 
 
 

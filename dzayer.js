@@ -1548,6 +1548,30 @@ wilayas : [
  	return dist;
 } ,
 
+closest : function(a) {
+  var w = dzayer.wilayas , clo =  1000000 , res;
+  for (var i = 0; i < w.length; i++) {
+    if (w[i] !== a && dzayer.distance(a,w[i]) < clo)   {
+      res = w[i] ;
+      clo = dzayer.distance(a,w[i]);
+
+    }
+  }
+  return res;
+} ,
+
+furthest : function(a) {
+  var w = dzayer.wilayas , clo =  0 , res;
+  for (var i = 0; i < w.length; i++) {
+    if (w[i] !== a && dzayer.distance(a,w[i]) > clo)   {
+      res = w[i] ;
+      clo = dzayer.distance(a,w[i]);
+    }
+  }
+  return res;
+
+} ,
+
 
 build : function(target,options) {
   var defaults = {

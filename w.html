@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dzair js</title>
+    <style media="screen">
+      .cont{width:80%;margin:10px auto;min-width: 300px;max-width: 1100px;}
+    </style>
+  </head>
+  <body>
+
+
+
+<div class="cont">
+  <h2>example 1</h2>
+  <p>BUILD SELECT</p>
+
+<select class="example1" name="">
+
+</select>
+
+
+</div>
+
+
+  </body>
+
+<script type="text/javascript" src="dz.js"></script>
+<script type="text/javascript" src="ext.js"></script>
+
+<script type="text/javascript">
+// Example 1
+dzayer.build('.example1',{
+  showNumbers :false,
+  select : 'setif',// or 19
+
+});
+
+
+
+
+var r = dzayer.commune('eulma');
+console.log(dzayer.commune('el eulma').origin());
+
+var annaba = dzayer.wilaya(19);
+var tlemcen = dzayer.wilaya('bejaia');
+var distance = dzayer.distance(annaba,tlemcen,'km');
+
+
+</script>
+</html>

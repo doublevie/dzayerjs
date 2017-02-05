@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dzair js</title>
+    <style media="screen">
+
+    </style>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/darkula.css">
+    <style media="screen">
+      pre {padding:0;}
+      body {padding-top : 100px;}
+
+    </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">dzayerJS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+        </div>
+      </div>
+    </nav>
+
+
+
+<div class="container">
+<div class="well">
+<h1>DZAYER.JS</h1>
+
+
+<h3>Usage</h3>
+  <pre>
+      <code class="html">
+&lt;script type="text/javascript" src="path/to/dzayerjs.js"&gt&lt;/script&gt
+</code>
+  </pre>
+
+
+<hr />
+
+
+<h3>wilaya</h3>
+  <pre> example
+  <code class="js">
+var setif = dzayer.wilaya(19);
+console.log(setif.name);
+
+var bejaia = dzayer.wilaya('bejaia');
+console.log(bejaia.id);
+console.log(bejaia.name);
+</code>
+
+  </pre>
+
+
+
+<h3>commune</h3>
+  <pre> example
+  <code class="js">
+var eulma = dzayer.commune('el eulma') ,
+w =  eulma.origin();
+console.log(w.name); // return Sétif
+
+var wilayaName =dzayer.commune('frenda').origin().name;
+console.log(wilayaName); // return Tiaret
+
+</code>
+  </pre>
+
+
+
+
+  <h3>Search</h3>
+
+<div class="row">
+ <div class="col-md-6">
+   <pre> example
+   <code class="js">
+$('example').input(function(){
+var val = $(this).val();
+var results = dzayer.search(val); // rertun Object
+});
+
+ </code>
+   </pre>
+
+  </div>
+
+
+  <div class="col-md-6" >
+    results <br><br><br>
+    <input type="text" name=""  class="form-control" value="" onkeyup="showRes(this.value)">
+    <ul id="res" style="max-height:120px;overflow-y:auto">
+
+    </ul>
+   </div>
+  </div>
+
+  <br>
+
+
+<h3>Build</h3>
+<div class="row">
+<div class="col-md-6">
+  <pre> example
+  <code class="js">
+    dzayer.build('#example3');
+</code>
+  </pre>
+</div>
+<div class="col-md-6">
+  <br>
+  <br>
+  <br>
+
+  <select id="example3" class="form-control" name="">
+  </select>
+
+</div>
+
+</div>
+
+<hr>
+
+<h4>Options</h4>
+
+<div class="row">
+<div class="col-md-6">
+  <pre> example 4
+  <code class="js">
+    dzayer.build('#example4',{
+      showNumbers :true,
+      select : 'tizi', // or 'tizi ouezzo'  or 15
+    });
+</code>
+  </pre>
+</div>
+<div class="col-md-6">
+  <br>
+  <br>
+
+  <br>
+  <select id="example4" class="form-control" name="">
+  </select>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+
+<h3>Distance</h3>
+
+  <pre>
+      <code class="js">
+var annaba = dzayer.wilaya(23) ;
+var tlemcen = dzayer.wilaya('tlemcen') ;
+
+var distance = dzayer.distance(annaba , tlemcen); // 847.1098437727794 km
+
+dzayer.distance(dzayer.wilaya(19) , dzayer.wilaya(25) , 'm'); // 107779 metres
+
+
+</code>
+  </pre>
+
+
+
+
+
+</div>
+</div>
+
+
+  </body>
+
+<script type="text/javascript" src="assets/highlight.pack.js"></script>
+<script type="text/javascript" src="dz.js"></script>
+<script type="text/javascript" src="ext.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+// Example 1
+dzayer.build('#example3');
+
+dzayer.build('#example4',{
+  showNumbers :true,
+  select : 'tizi',
+});
+
+function showRes(t) {
+var res = dzayer.search(t) ;
+document.querySelector('#res').innerHTML = '';
+for (var i = 0; i < res.length; i++) {
+  document.querySelector('#res').innerHTML += '<li>'+res[i].name+'</li>';
+}
+}
+
+
+var comune = dzayer.commune('el eulma') ,
+w =  comune.origin();
+console.log(w.name);
+
+
+var annaba = dzayer.wilaya(23) ;
+var tlemcen = dzayer.wilaya('tlemcen') ;
+
+var distance = dzayer.distance(annaba , tlemcen);
+
+</script>
+</html>

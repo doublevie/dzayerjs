@@ -1589,7 +1589,6 @@ for (var i = 0; i < dzayer.communes.length; i++) {
   if (dzayer.communes[i].wilaya == w) outp +=  '<option value="'+dzayer.communes[i].name+'" >'+dzayer.communes[i].name+'</option>';
 
 }
-
 document.querySelector(sel).innerHTML = outp;
 }
 

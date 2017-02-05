@@ -17,6 +17,10 @@
         border-radius: 0;
       }
 
+      ul #res {
+
+      }
+
     </style>
   </head>
   <body>
@@ -114,7 +118,8 @@ var results = dzayer.search(val); // rertun Object
 
 
   <div class="col-md-6" >
-    results <br><br><br>
+    results <br><br>
+    <input type="checkbox" id="isc" value="">  Communes ?<br>
     <input type="text" name=""  class="form-control" value="" onkeyup="showRes(this.value)">
     <ul id="res" style="max-height:120px;overflow-y:auto">
 
@@ -129,7 +134,11 @@ var results = dzayer.search(val); // rertun Object
 <div class="row">
 <div class="col-md-6">
   <pre> example
-  <code class="js">
+<code class="html">
+  /* HTML*/
+     &lt;select id="example3" &gt &lt;/select&gt
+  </code>
+<code class="js">
     dzayer.build('#example3');
 </code>
   </pre>
@@ -204,7 +213,7 @@ dzayer.distance(dzayer.wilaya(19) , dzayer.wilaya(25) , 'm'); // 107779.38770951
   </body>
 
 <script type="text/javascript" src="assets/highlight.pack.js"></script>
-<script type="text/javascript" src="dzayer.min.js"></script>
+<script type="text/javascript" src="dzayer.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
 
@@ -217,12 +226,23 @@ dzayer.build('#example4',{
   select : 'tizi',
 });
 
+
+/*SEARCH*/
 function showRes(t) {
-var res = dzayer.search(t) ;
+  if (t !== '') {
+  var com = document.getElementById('isc').checked ;
+var res = dzayer.search(t,com) ;
 document.querySelector('#res').innerHTML = '';
 for (var i = 0; i < res.length; i++) {
   document.querySelector('#res').innerHTML += '<li>'+res[i].name+'</li>';
 }
+
+} else {
+  document.querySelector('#res').innerHTML += '';
+
+}
+
+
 }
 
 

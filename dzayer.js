@@ -1503,8 +1503,8 @@ wilayas : [
  {zip:"4835", name:"Souk El Had",wilaya:48 },
  {zip:"4836", name:"Yellel",wilaya:48 },
  {zip:"4837", name:"Zemmora",wilaya:48 }] ,
- search :function(key) {
- var w = dzayer.wilayas, i , list =[];
+ search :function(key , com) {
+ var w = (com ?dzayer.communes : dzayer.wilayas), i , list =[];
    for (i = 0; i < w.length; i++) {
    if (w[i].name.normalize().indexOf(key.normalize()) !== -1 || (parseInt(key) < 49 && parseInt(key) > 0 &&  w[i].id == parseInt(key)))  list.push(w[i]);
    }

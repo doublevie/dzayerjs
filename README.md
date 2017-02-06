@@ -21,8 +21,9 @@ var wilaya = frenda.origin();// tiaret
 
 #search
 ```javascript
-wilayas
+//wilayas
 var results = dzayer.search( 'al'); // return wilayas
+//comunes
 var results2 = dzayer.search('ain',true); //return Object
 ```
 

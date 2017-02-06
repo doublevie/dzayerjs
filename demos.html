@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dzayer js -Demos</title>
+    <style media="screen">
+
+    </style>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/darkula.css">
+    <script type="text/javascript" src="dzayer.js"></script>
+    <style media="screen">
+      pre {padding:0;}
+      body {padding-top : 100px;background: #C8FF91}
+      .btn , .form-control {
+        border-radius: 0;
+      }
+
+      ul #res {
+
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">dzayerJS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+        </div>
+      </div>
+    </nav>
+
+
+
+<div class="container">
+<div class="well">
+
+<h1>EXAMPLE 1 : CONTACT FORM</h1>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">Contact</div>
+      <div class="panel-body">
+    <form class="form1" action="index.html" method="post">
+    <input type="text" name="nom" value="" class="form-control" placeholder="nom">
+    <br>
+    <input type="text" name="email" value="" class="form-control" placeholder="email">
+    <br>
+    <select class="form-control wialaya" name="wialaya" required></select>
+    <br>
+    <select class="form-control commune" name="commune"></select>
+    <br>
+    <textarea name="message" rows="8" cols="80" class="form-control"></textarea>
+    <br>
+     <button type="submit" class="btn btn-block btn-primary" name="button">Envoyer</button>
+     </form>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col-md-6">
+
+<pre>
+<code class="js">
+  dzayer.build('.wialaya',{
+       showNumbers :false,
+       communes : '.commune',
+       select : 'alger',
+     });
+
+</code>
+</pre>
+
+
+
+
+
+<script type="text/javascript">
+dzayer.build('.wialaya',{
+     showNumbers :false,
+     communes : '.commune',
+     select : 'alger',
+   });
+document.querySelector('.form1').addEventListener('submit',function(e){
+  e.preventDefault();
+  var w = document.querySelector('.wialaya').value;
+  var c = document.querySelector('.commune').value;
+  alert('wilaya='+w+'&commune='+c);
+})
+</script>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<h1>EXAMPLE 2 : SEARCH</h1>
+
+<div class="row">
+  <div class="col-md-6">
+<br><br>
+    <div class="panel panel-primary">
+       <div class="panel-heading">SEARCH</div>
+      <div class="panel-body">
+
+        <input list="search" name="myBrowser" class="form-control"  onkeyup="search(this.value)"/></label>
+        <datalist id="search">
+
+        </datalist>
+
+       </div>
+    </div>
+
+
+  </div>
+  <div class="col-md-6">
+
+    <pre>
+    <code class="js">
+      function search(key) {
+        var output = '';
+        var results = dzayer.search(key,true);
+        if (results && results.length) {
+          for (var i = 0; i < results.length; i++) {
+          output += '<option value="'+results[i].name+'">'  ;
+          }
+        }
+        document.querySelector('#search').innerHTML = output;
+      }
+
+    </code>
+    </pre>
+
+
+<script type="text/javascript">
+function search(key) {
+  var output = '';
+  var results = dzayer.search(key,true);
+  if (results && results.length) {
+    for (var i = 0; i < results.length; i++) {
+    output += '<option value="'+results[i].name+'">'  ;
+    }
+  }
+  document.querySelector('#search').innerHTML = output;
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+  </body>
+
+<script type="text/javascript" src="assets/highlight.pack.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

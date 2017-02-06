@@ -34,8 +34,8 @@ calculate distance between 2 places
 ```javascript
 var bouira = dzayer.wilaya('bouira') ,
 adrar = dzayer.wilaya('adrar') ,
-distance (adrar,bouira); // return distance
-var distance_m = distance(adrar,bouira,'m');
+distance = dzayer.distance(adrar,bouira); // return 1186 
+var distance_m = dzayer.distance(adrar,bouira,'m'); // return 1186396
 ``` 
 #Closest
 shows the closest point 

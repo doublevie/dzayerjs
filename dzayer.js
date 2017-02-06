@@ -1574,6 +1574,7 @@ furthest : function(a) {
 
 
 build : function(target,options) {
+
   var defaults = {
     filter : dzayer.wilayas,
     showNumbers : false,
@@ -1590,6 +1591,7 @@ var selected = (options && options.select && dzayer.wilaya(options.select) == x 
 
 var param = Object.assign({}, defaults, options);
 var outPut = '';
+
 for (var i = 0; i < param.filter.length; i++) {
   outPut += param.render(param.filter[i]);
 }

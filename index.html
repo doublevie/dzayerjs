@@ -205,6 +205,8 @@ var results = dzayer.search(val); // rertun Object
 
 <h3>Distance</h3>
 
+
+
   <pre>
       <code class="js">
 var annaba = dzayer.wilaya(23) ;
@@ -217,6 +219,25 @@ dzayer.distance(dzayer.wilaya(19) , dzayer.wilaya(25) , 'm'); // 107779.38770951
 
 </code>
   </pre>
+
+<h3>Demo</h3>
+<div class="row">
+<div class="col-md-4">
+<select class="form-control d1" name=""  onchange="calculateDistance()">
+
+</select>
+</div>
+<div class="col-md-4" >
+  <select class="form-control d2" name="" onchange="calculateDistance()">
+
+  </select>
+</div>
+<div class="col-md-4">
+results :<br>
+<span id="distance"></span>
+</div>
+</div>
+
 
 
 <hr>
@@ -315,10 +336,25 @@ w =  comune.origin();
 console.log(w.name);
 
 
-var annaba = dzayer.wilaya(23) ;
-var tlemcen = dzayer.wilaya('tlemcen') ;
+dzayer.build('.d1');
+dzayer.build('.d2');
+calculateDistance();
+function calculateDistance() {
+var d1 = dzayer.wilaya(document.querySelector('.d1').value) ;
+var d2 = dzayer.wilaya(document.querySelector('.d2').value) ;
+var distance = dzayer.distance(d1 , d2);
+document.querySelector('#distance').innerText = distance.toFixed(2)  + ' km';
+}
 
-var distance = dzayer.distance(annaba , tlemcen);
+
+
+
+
+
+
+
+
+
 
 </script>
 </html>

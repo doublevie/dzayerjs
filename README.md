@@ -45,3 +45,19 @@ var x = dzayer.w(15) ,
 closest = dzayer.closest(x);
 console.log(closest.name) ; //return the closest w to tizi ouezzo
 ```
+
+#Furthest 
+```javascript
+     // example 1
+  var w1 = dzayer.wilaya(11) ; // tamanrasset
+  var w2 = dzayer.furthest(w1);
+  console.log(w2.name); //return Annaba
+
+    // example 2
+   var w = dzayer.commune('adrar').origin() ;
+  var furthest =dzayer.furthest(w);
+  console.log(furthest.name); //return El Taref
+
+``` 
+
+

@@ -2,9 +2,9 @@
 Javascript library for algeria cities , build , search , count
 
 #install
-
-add 'dzayer.js' file or 'dzayer.min.js' to your html file or app
-
+```html
+&lt;script type="text/javascript" src="path/to/dzayerjs.js"&gt&lt;/script&gt
+```
 #wilaya
 ```javascript
 var alger = dzayer.wilaya(16);

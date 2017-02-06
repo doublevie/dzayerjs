@@ -3,7 +3,8 @@ Javascript library for algeria cities , build , search , count
 
 #install
 ```html
-&lt;script type="text/javascript" src="path/to/dzayerjs.js"&gt&lt;/script&gt
+<script type="text/javascript" src="dzayerjs.js"></script>
+
 ```
 #wilaya
 ```javascript
